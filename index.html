@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Diary Entry</title>
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/entry.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Smart Diary Entry</h1>
+
+      <form action="entry.php" method="POST" enctype="multipart/form-data">
+        <div>
+          <label for="entry_date">Date:</label>
+          <input type="date" name="entry_date" id="entry_date" required />
+        </div>
+        <div>
+          <label for="entry_time">Time:</label>
+          <input type="time" name="entry_time" id="entry_time" required />
+        </div>
+        <div>
+          <label for="sentiment">Mood:</label>
+          <select name="sentiment" id="sentiment">
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="neutral">Neutral</option>
+          </select>
+        </div>
+        <div>
+          <label for="tags">Tags:</label>
+          <input type="text" name="tags" id="tags" />
+        </div>
+
+        <!-- Quill Editor -->
+        <div id="editor"></div>
+
+        <!-- Audio Recording -->
+        <div class="audio-recording">
+          <button id="record-btn" type="button">Start Recording</button>
+          <button id="stop-btn" type="button" style="display: none">
+            Stop Recording
+          </button>
+          <audio id="audio-preview" controls style="display: none"></audio>
+          <button id="delete-audio-btn" type="button" style="display: none">
+            Delete Recording
+          </button>
+          <input type="hidden" name="audio_data" id="audio_data" />
+        </div>
+
+        <!-- Image Upload -->
+        <div class="image-upload">
+          <label for="images">Upload Images:</label>
+          <input
+            type="file"
+            name="images[]"
+            id="images"
+            accept="image/*"
+            multiple
+          />
+        </div>
+
+        <button type="submit" name="save_entry">Save Entry</button>
+      </form>
+    </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script>
+      var quill = new Quill("#editor", { theme: "snow" });
+
+      // Variables for audio recording
+      let mediaRecorder;
+      let audioChunks = [];
+      let audioBlob;
+      let audioUrl;
+      let audioPreview = document.getElementById("audio-preview");
+
+      // Get elements for buttons
+      const recordBtn = document.getElementById("record-btn");
+      const stopBtn = document.getElementById("stop-btn");
+      const deleteAudioBtn = document.getElementById("delete-audio-btn");
+
+      // Start recording
+      recordBtn.addEventListener("click", () => {
+        navigator.mediaDevices
+          .getUserMedia({ audio: true })
+          .then((stream) => {
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.start();
+
+            mediaRecorder.ondataavailable = (event) => {
+              audioChunks.push(event.data);
+            };
+
+            mediaRecorder.onstop = () => {
+              audioBlob = new Blob(audioChunks, { type: "audio/wav" });
+              audioUrl = URL.createObjectURL(audioBlob);
+              audioPreview.src = audioUrl;
+              audioPreview.style.display = "block";
+
+              // Enable delete and stop buttons, disable start recording
+              stopBtn.style.display = "none";
+              deleteAudioBtn.style.display = "inline-block";
+              recordBtn.style.display = "none";
+
+              // Save the audio file as hidden input
+              const audioDataInput = document.getElementById("audio_data");
+              audioDataInput.value = audioBlob; // This will send audio data to PHP
+            };
+
+            stopBtn.style.display = "inline-block";
+          })
+          .catch((error) =>
+            console.error("Error accessing audio devices:", error)
+          );
+      });
+
+      // Stop recording
+      stopBtn.addEventListener("click", () => {
+        mediaRecorder.stop();
+      });
+
+      // Delete the recording
+      deleteAudioBtn.addEventListener("click", () => {
+        audioPreview.style.display = "none";
+        deleteAudioBtn.style.display = "none";
+        recordBtn.style.display = "inline-block";
+      });
+    </script>
+  </body>
+</html>

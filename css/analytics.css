@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* Header Styles */
+.app-header {
+  background-color: #ececec; /* Soft Gray */
+  padding: 20px 40px; /* Top and bottom padding, with side padding for spacing */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+}
+
+/* Header Container */
+.header-container {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between back button, title, and logo */
+  max-width: 1200px; /* Limit max width for larger screens */
+  margin: auto; /* Center the container */
+}
+
+/* Logo Container */
+.logo-container {
+  flex: 1; /* Allow logo to take space */
+  text-align: right; /* Align logo to the right */
+}
+
+/* Logo Styles */
+.logo {
+  width: 120px; /* Adjust logo size (larger for better visibility) */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Title Styles */
+.title-container {
+  flex: 2; /* Allow title to take more space */
+  text-align: center; /* Center title text */
+}
+
+.title-container h1 {
+  font-size: 2.5em; /* Larger title font size */
+  color: #3c3c3c; /* Charcoal Gray */
+  margin: 0; /* Remove margin */
+  letter-spacing: 1.5px; /* Slight spacing for a modern touch */
+}
+
+.header-description {
+  font-size: 1.2em; /* Description font size */
+  color: #5a7184; /* Slate Blue */
+  margin-top: 5px; /* Top margin for spacing */
+}
+
+/* Back Button Styles */
+.back-button-container {
+  flex: 1; /* Allow back button container to take space */
+  text-align: left; /* Align back button to the left */
+}
+
+.back-button {
+  display: inline-flex; /* Use inline-flex for better alignment */
+  align-items: center; /* Center the icon and text vertically */
+  background-color: #d1e8e2; /* Misty Blue for a soft look */
+  color: #3c3c3c; /* Charcoal Gray for the text */
+  padding: 12px 18px; /* Slightly larger padding for comfort */
+  border: none; /* No border for a clean look */
+  border-radius: 50px; /* Pill-shaped button for modern appeal */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1em; /* Font size */
+  font-weight: 700; /* Bold text for emphasis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.back-button:hover {
+  background-color: #3c3c3c; /* Charcoal Gray on hover */
+  color: #d1e8e2; /* Change text to Misty Blue on hover */
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.arrow {
+  margin-right: 10px; /* Space between arrow and text */
+  font-size: 1.4em; /* Larger arrow for emphasis */
+}
+
+/* Navigation Styles */
+.navigation {
+  padding: 12px 0; /* Padding for the navigation */
+}
+
+.navigation ul {
+  list-style: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: flex; /* Flexbox for navigation items */
+  justify-content: center; /* Center the list */
+}
+
+.navigation li {
+  margin: 0 20px; /* Space between items */
+}
+
+.navigation li a {
+  position: relative; /* Position relative for hover effect */
+  color: #3c3c3c; /* Charcoal Gray */
+  text-decoration: none; /* No underline */
+  padding: 10px 20px; /* Padding for links */
+  font-size: 1.1em; /* Font size */
+  font-weight: 500; /* Medium weight */
+  border-radius: 25px; /* Rounded corners for buttons */
+  overflow: hidden; /* Hide overflow for pseudo-element */
+  transition: color 0.3s ease; /* Transition for text color */
+}
+
+.navigation li a::after {
+  content: ""; /* Pseudo-element for hover effect */
+  position: absolute; /* Absolute positioning */
+  left: 50%; /* Center it horizontally */
+  bottom: 0; /* Position at the bottom */
+  width: 100%; /* Full width */
+  height: 3px; /* Height of the line */
+  background-color: #3c3c3c; /* Charcoal Gray */
+  transform: translateX(-50%) scaleX(0); /* Center it and scale it down */
+  transition: transform 0.3s ease; /* Transition for the line */
+}
+
+.navigation li a:hover {
+  color: #5a7184; /* Slate Blue on hover */
+}
+
+.navigation li a:hover::after {
+  transform: translateX(-50%) scaleX(1); /* Scale the line to full width */
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+.main-content {
+  padding: 20px;
+}
+
+.statistics-overview {
+  background-color: #ffd8b8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.stats-summary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-item {
+  flex: 1;
+  padding: 15px;
+  margin: 0 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item h3 {
+  margin-bottom: 10px;
+}
+
+.analytics-section {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-section h2 {
+  margin-bottom: 15px;
+  color: #5a7184;
+}
+
+.chart {
+  max-width: 800px; /* Maximum width for the chart */
+  height: 500px; /* Height of the chart */
+  margin: 0 auto; /* Center the chart */
+}
+
+.app-footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #5a7184;
+  color: #fff;
+  position: relative;
+}
+
+/* Go to Top Button */
+#go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  background-color: #5a7184;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#go-to-top:hover {
+  background-color: #ffd8b8;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  background-color: #d1e8e2; /* Misty Blue */
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filters label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #5a7184; /* Slate Blue */
+}
+
+.filters input[type="date"] {
+  border: 1px solid #5a7184; /* Slate Blue */
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 10px;
+  font-size: 14px;
+  width: 150px; /* Fixed width for date inputs */
+  transition: border 0.3s;
+}
+
+.filters input[type="date"]:focus {
+  outline: none;
+  border-color: #ffd8b8; /* Soft Peach */
+}
+
+.filters button {
+  background-color: #5a7184; /* Slate Blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.filters button:hover {
+  background-color: #3c3c3c;
+}
+
+/*_________________________________________________________________*/
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center; /* Center buttons */
+  background-color: #d1e8e2; /* Misty Blue */
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Space below buttons */
+}
+
+.button-container button {
+  background-color: #5a7184; /* Slate Blue */
+  color: white;
+  border: none;
+  border-radius: 8px; /* More rounded corners */
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 0 15px; /* Space between buttons */
+  font-size: 1em; /* Adjust font size */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.button-container button:hover {
+  background-color: #183750;
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Footer */
+.app-footer {
+  background-color: #34495e; /* Dark Grayish Blue */
+  color: #f39c12; /* Golden Color */
+  padding: 20px;
+  text-align: center;
+  border-top: 4px solid #5a7184; /* Slate Blue */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items */
+}
+
+.clock {
+  background-color: #5a7184; /* Slate Blue */
+  color: white; /* White text for contrast */
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 0 auto; /* Center clock */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column; /* Stack date and time vertically */
+  align-items: center; /* Center items */
+  margin-bottom: 15px; /* Space below clock */
+}
+
+#Date {
+  font-size: 1.2em; /* Larger font for date */
+  margin-bottom: 5px; /* Space below date */
+  font-weight: bold; /* Make the date stand out */
+}
+
+.clock ul {
+  list-style: none;
+  display: flex;
+  font-size: 2.5em; /* Adjust size for visibility */
+  gap: 10px;
+  justify-content: center;
+}
+
+.clock li {
+  color: #f39c12; /* Golden Color */
+}
+
+.footer-content p {
+  margin: 0; /* Reset margin for copyright text */
+  font-size: 0.9em; /* Smaller font size for copyright */
+  color: #d1e8e2; /* Misty Blue for contrast */
+}
+
+/* Back to Home Buton*/
+
+#wordCloud span {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  color: #333;
+  background: #f3f3e0;
+  border-radius: 5px;
+  font-weight: bold;
+}

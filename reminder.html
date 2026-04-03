@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder & Notification</title>
+    <link rel="stylesheet" href="css/reminderstyle.css">
+</head>
+
+<body>
+
+<div class="container">
+    <button class="back-button" onclick="goBack()">&#8882;</button>
+
+    <!-- Reminder Form Section -->
+
+    <div class="reminder-form">
+        <h1 class="set"> &#128204; Set Reminder</h1>
+        <label for="reminderText">Event:</label>
+        <input type="text" id="reminderText" placeholder="">
+        <label for="reminderMessage">Message:</label>
+        <textarea id="reminderMessage" placeholder=""></textarea>
+        <label for="reminderTime">Time:</label>
+        <input type="datetime-local" id="reminderTime">
+        <label for="reminderFrequency">Reminder Frequency:</label>
+        <select id="reminderFrequency">
+            <option value="once">Once</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <br><br>
+        <button class="btn" onclick="setReminder()"> Reminder Me</button>
+    </div>
+
+    <!-- Notification Section -->
+
+    <div class="notification-section">
+        <h1>Notifications<span class="icon">🔔</span><span id="notificationBadge" class="badge">0</span>  </h1>
+        <ul id="triggeredNotificationList" class="notification-list">
+        </ul>
+    </div>
+</div>
+
+<!-- Success Messages -->
+
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <p id="modalMessage"></p>
+        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<audio id="notificationSound" src="notification-mp3.wav" preload="auto"></audio>
+
+<script src="js/reminderscipts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f4f7f6;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  background-color: #3c3c3c;
+  color: #ffffff;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+header button {
+  background: #5a7184;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header button:hover {
+  background: #002d4b;
+}
+
+/* Main Layout */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+/* Calendar Section */
+.calendar-container {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.calendar-container h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #2f4f66;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.calendar-day {
+  background-color: #e8f2f8;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4c5c70;
+}
+
+.calendar-day:hover {
+  background-color: #ffd57d;
+  transform: scale(1.05);
+}
+
+.calendar-day.task-date {
+  background-color: #c8f7c5;
+}
+
+.calendar-day.important-task {
+  background-color: #ffadad;
+}
+
+/* Task Manager Section */
+.task-manager {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.task-manager h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #2f4f66;
+}
+
+.task-form-wrapper {
+  margin-top: 15px;
+}
+
+#taskForm input,
+#taskForm textarea,
+#taskForm select,
+#taskForm button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #d1e8e2;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+}
+
+#taskForm button {
+  background-color: #5a7184;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: white;
+}
+
+#taskForm button:hover {
+  background-color: #002d4b;
+}
+
+/* Task View Section */
+.task-view {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.task-view h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #2f4f66;
+}
+
+.task-list .task {
+  background: #f0f8ff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 8px solid #1f4a6a;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.2s;
+}
+
+.task-list .task:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-list .important {
+  border-left: 8px solid #ff6f6f;
+}
+
+/* Completed Tasks */
+.completed-tasks {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.completed-tasks h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #2f4f66;
+}
+
+.completed-tasks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.completed-tasks li {
+  background-color: #ffecd1;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.completed-tasks li:hover {
+  transform: translateX(5px);
+}
+
+#clearCompletedButton {
+  background-color: #5a7184;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#clearCompletedButton:hover {
+  background-color: #002d4b;
+}

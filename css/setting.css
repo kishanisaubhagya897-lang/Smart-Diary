@@ -1,0 +1,214 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .settings-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .settings-container:hover {
+    transform: translateY(-5px);
+  }
+  
+  .header h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+  
+  .settings-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  .category-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: left;
+    color: #5a7184;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .category-card:hover {
+    background-color: #e7f3f3;
+    transform: translateY(-4px);
+  }
+  
+  .category-card i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #5a7184;
+  }
+  
+  .category-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .logout-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    background-color: #ff3b30;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 50px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e21b00;
+  }
+  
+  /* Modals */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .modal h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .modal input[type="text"],
+  .modal input[type="email"],
+  .modal input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+  }
+  
+  .modal input[type="text"]:focus,
+  .modal input[type="email"]:focus,
+  .modal input[type="password"]:focus {
+    border-color: #5a7184;
+  }
+  
+  .submit-btn {
+    padding: 15px 30px;
+    background-color: #5a7184;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #3c3c3c;
+  }
+  
+  /* Close Button */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #5a7184;
+  }
+  
+  /* Toast Notifications */
+  .toast {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 1002;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .toast.success {
+    background-color: #4caf50;
+  }
+  
+  .toast.error {
+    background-color: #f44336;
+  }
+  
+  .toast .icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  button {
+    background-color: #1DB954; /* Spotify green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
