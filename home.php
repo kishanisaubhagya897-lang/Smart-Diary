@@ -139,7 +139,7 @@ $result = $stmt->get_result();
     <section class="welcome-section" id="welcome-section">
       <div class="container">
         <h1 class="welcome-title">
-          Welcome, <span id="username">[User's Name]</span>!
+          Welcome, <span id="username">Saubhagya</span>!
         </h1>
         <p class="intro-text">Explore all the amazing features:</p>
         <div class="features-container">
