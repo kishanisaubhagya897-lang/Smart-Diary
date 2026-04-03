@@ -20,41 +20,14 @@ Smart Diary is a web-based application designed to help users record, manage, an
 
 ## 🛠️ Technologies Used
 
-### Frontend
-
-* HTML
-* CSS
-* JavaScript
-
-### Backend
-
-* PHP
-
-### Database
-
-* MySQL (WAMP Server)
-
-### Tools
-
-* Git & GitHub
-* VS Code
+| Layer    | Technology           |
+| -------- | -------------------  |
+| Frontend | HTML, CSS, JavaScript|
+| Backend  | PHP                  |
+| Database | MySQL                |
 
 ---
 
-## 📂 Project Structure
-
-smart-diary/
-│── css/
-│── js/
-│── images/
-│── includes/
-│── config/
-│── index.php
-│── login.php
-│── register.php
-│── dashboard.php
-
----
 
 ## ⚙️ Installation & Setup
 
@@ -88,7 +61,10 @@ smart_diary
 ### 🔹 Step 4: Import Database
 
 * Go to Import tab
-* Upload `.sql` file
+* Upload `smart_diary.sql` file
+
+📁 Database file included in this repository:
+[Download Database](smart_diary.sql)
 
 ---
 
@@ -125,9 +101,58 @@ http://localhost/smart-diary
 
 ---
 
-## 📷 Screenshots
+## 📸 Screenshots
+✨ Landing Page
 
-(Add screenshots here)
+![Landing Page](img/screenshots/l1.png)
+![Landing Page](img/screenshots/l2.png)
+![Landing Page](img/screenshots/l3.png)
+
+---
+
+🔐 User Login
+
+![Login Page](img/screenshots/login.png)
+
+---
+🔐 User Registration
+
+![Register_User](img/screenshots/signup.png)
+
+---
+📋 Home Page
+
+![Home_Page](img/screenshots/h1.png)
+![Home_Page](img/screenshots/h2.png)
+![Home_Page](img/screenshots/h3.png)
+![Home_Page](img/screenshots/h4.png)
+
+---
+📊 Features
+
+![Hotels](img/screenshots/f1.png)
+![Hotels](img/screenshots/a1.png)
+
+---
+📍 New Entry
+
+![Vehicles](img/screenshots/NE1.png)
+![Vehicles](img/screenshots/NE2.png)
+
+---
+🧾 calendar
+
+![Agents](img/screenshots/calendar.png)
+
+---
+🧾 Weather
+
+![Agents](img/screenshots/weather.png)
+
+---
+🛠️ Setting
+
+![Agents](img/screenshots/setting.png)
 
 ---
 
